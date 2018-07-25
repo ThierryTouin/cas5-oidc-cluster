@@ -1,0 +1,17 @@
+{
+  "superadmin": {
+    "firstName":["SuperAdmin"],
+    "lastName":["One"],
+    "email":"superadmin@toto.fr"
+  },
+  "admin1": {
+    "firstName":["Admin1"],
+    "lastName":["One"],
+    "email":"admin1@toto.fr"
+  },
+  "admin2": {
+    "firstName":["Admin2"],
+    "eduPersonAffiliation":["employee", "student"],
+    "email":"admin2@toto.fr"
+  }
+}

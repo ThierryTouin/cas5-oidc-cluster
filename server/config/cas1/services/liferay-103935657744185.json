@@ -1,0 +1,24 @@
+{
+  "@class" : "org.apereo.cas.services.OidcRegisteredService",
+  "serviceId" : "^(http|imap)://.*-virtualbox.*", 
+  "name" : "liferay",
+  "id" : 103935657744185,
+  "evaluationOrder" : 1,
+  "clientId": "test",
+  "clientSecret": "test",
+  "signIdToken": true,
+  "implicit": false,
+  "jwks": "jwksRep",
+  "encryptIdToken": false,
+  "idTokenEncryptionAlg": "DIRECT",
+  "idTokenEncryptionEncoding": "AES_128_CBC_HMAC_SHA_256",
+  "bypassApprovalPrompt": true,
+  "jsonFormat": true,
+  "usernameAttributeProvider" : {
+    "@class" : "org.apereo.cas.services.PrincipalAttributeRegisteredServiceUsernameProvider",
+    "usernameAttribute" : "uid"
+  },
+  "attributeReleasePolicy" : {
+    "@class" : "org.apereo.cas.services.ReturnAllAttributeReleasePolicy"
+  }
+}
