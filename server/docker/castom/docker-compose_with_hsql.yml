@@ -39,9 +39,7 @@ services:
     expose:
       - "8009"
     command: catalina.sh jpda run
-  db:
-    image: postgres
-    restart: always
-    environment:
-      POSTGRES_PASSWORD: example
-
+  hsqldb:
+    image: datagrip/hsqldb
+    expose:
+      - "9001"

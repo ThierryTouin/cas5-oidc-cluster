@@ -245,6 +245,18 @@
             <AppenderRef ref="casAudit"/>
             <AppenderRef ref="casFile"/>
         </AsyncLogger>
+        <AsyncLogger name="org.apereo.cas.support.oauth.web" level="debug" includeLocation="true">
+            <AppenderRef ref="casAudit"/>
+            <AppenderRef ref="casFile"/>
+        </AsyncLogger>
+        <AsyncLogger name="org.apereo.cas.ticket.registry" level="debug" includeLocation="true">
+            <AppenderRef ref="casAudit"/>
+            <AppenderRef ref="casFile"/>
+        </AsyncLogger>
+        <AsyncLogger name="org.hibernate.SQL" level="debug" includeLocation="true">
+            <AppenderRef ref="casAudit"/>
+            <AppenderRef ref="casFile"/>
+        </AsyncLogger>
         <AsyncRoot level="error">
             <AppenderRef ref="casConsole"/>
         </AsyncRoot>

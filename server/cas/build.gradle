@@ -17,7 +17,7 @@ dependencies {
     compile "org.apereo.cas:cas-server-support-jpa-service-registry:${project.'cas.version'}"
     compile "org.apereo.cas:cas-server-support-jdbc-drivers:${project.'cas.version'}"
     compile "org.apereo.cas:cas-server-support-oidc:${project.'cas.version'}"
-    //compile "org.apereo.cas:cas-server-support-jpa-ticket-registry:${project.'cas.version'}"
+    compile "org.apereo.cas:cas-server-support-jpa-ticket-registry:${project.'cas.version'}"
     manifestSource "org.apereo.cas:cas-server-webapp:${project.'cas.version'}"
 }
 
