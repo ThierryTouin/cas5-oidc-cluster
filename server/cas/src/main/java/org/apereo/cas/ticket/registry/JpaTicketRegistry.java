@@ -139,25 +139,28 @@ public class JpaTicketRegistry extends AbstractTicketRegistry {
     @Override
     public boolean deleteSingleTicket(final String ticketId) {
 
-	System.out.println("deleteSingleTicket ticketId=" + ticketId);
-         int totalCount=0;
+	      LOGGER.debug("deleteSingleTicket ticketId=" + ticketId);
+        int totalCount=0;
+        //final int totalCount;
         final TicketDefinition md = this.ticketCatalog.find(ticketId);
 
-	System.out.println("deleteSingleTicket md=" + md);
+	      LOGGER.debug("deleteSingleTicket md=" + md);
         if (md.getProperties().isCascade()) {
-	    System.out.println("=> cascade !!!");
+	      LOGGER.debug("=> cascade !!!");
             totalCount = deleteTicketGrantingTickets(ticketId);
         } else {
-	    System.out.println("=> not cascade !!!");
+	      LOGGER.debug("=> not cascade !!!");
             final Query query = entityManager.createQuery("delete from " + getTicketEntityName(md) + " o where o.id = :id");
             query.setParameter("id", ticketId);
 
-	    System.out.println("query=delete from " + getTicketEntityName(md) + " o where o.id = :id");
-	    try {
-               totalCount = query.executeUpdate();
+	           LOGGER.debug("query=delete from " + getTicketEntityName(md) + " o where o.id = :id");
+             // Ajout de ce try catch sinon
+             //totalCount = query.executeUpdate();
+
+      	    try {
+                  totalCount = query.executeUpdate();
             } catch (Exception e) {
-                LOGGER.error("deleteSingleTicket e:" + e.getMessage());
-               
+                  LOGGER.error("deleteSingleTicket e:" + e.getMessage());
             }
         }
         return totalCount != 0;
@@ -194,7 +197,7 @@ public class JpaTicketRegistry extends AbstractTicketRegistry {
 
         return totalCount;
     }
-    
+
     private static long countToLong(final Object result) {
         return ((Number) result).longValue();
     }
