@@ -2,12 +2,13 @@
 
 The goal of this project is to propose a complete stack to test a CAS cluster server built with the OIDC plugin.
 
-The CAS server is built in overlay mode. The part of this project is inspired by the following git project https://github.com/nortal/cas5-oidc-example . You can find the readme of the project here https://github.com/ThierryTouin/cas5-oidc-cluster/tree/master/server
+* The CAS server is built in overlay mode. The part of this project is inspired by the following git project https://github.com/nortal/cas5-oidc-example . You can find the readme of the project here https://github.com/ThierryTouin/cas5-oidc-cluster/tree/master/server
 
-The client is a simple OIDC client. I was inspired by the following project https://github.com/VirginPulsePublic/openid-connect-tool. You can find the readme of the project here https://github.com/ThierryTouin/cas5-oidc-cluster/tree/master/client/openid-connect-tool
+* The client is a simple OIDC client. I was inspired by the following project https://github.com/VirginPulsePublic/openid-connect-tool. You can find the readme of the project here https://github.com/ThierryTouin/cas5-oidc-cluster/tree/master/client/openid-connect-tool
 
-And finally, you will find a proxy project. It makes the link between the client and the two CAS nodes of the server. It avoids CORS problems. (so you will need to run 2 proxy servers).
+* And finally, you will find a proxy project. It makes the link between the client and the two CAS nodes of the server. It avoids CORS problems. (so you will need to run 2 proxy servers).
 
+***
 To summarize, to launch the project, you must open 4 terminals :
 (before you have to read the readme of the server and the client to install the applications, the commands below are only possible if the stack has already worked on the workstation)
 
