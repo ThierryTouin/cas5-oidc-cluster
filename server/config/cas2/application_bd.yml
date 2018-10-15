@@ -1,0 +1,62 @@
+cas:
+  server:
+    name: http://cas1:8080
+    prefix: http://cas1:8080/cas
+
+cas.serviceRegistry:
+  json.location: file:///etc/cas/config/services
+  initFromJson: true
+  jpa.healthQuery:
+  jpa.isolateInternalQueries: false
+  jpa.url: jdbc:postgresql://db:5432/template1
+  jpa.failFastTimeout: 1
+  jpa.dialect: org.hibernate.dialect.PostgreSQL94Dialect
+  jpa.leakThreshold: 10
+  jpa.batchSize: 1
+  jpa.user: postgres
+  jpa.ddlAuto: update
+  jpa.password: example
+  jpa.autocommit: false
+  jpa.driverClass: org.postgresql.Driver
+  jpa.idleTimeout: 5000
+  jpa.dataSourceName:
+  jpa.dataSourceProxy: false
+  jpa.properties.propertyName: propertyValue
+  jpa.pool.suspension: false
+  jpa.pool.minSize: 6
+  jpa.pool.maxSize: 18
+  jpa.pool.maxWait: 2000
+  
+cas.ticket:
+  registry:
+    jpa.ticketLockType: NONE #PESSIMISTIC_FORCE_INCREMENT #NONE #OPTIMISTIC
+    jpa.jpaLockingTimeout: 3600
+    jpa.healthQuery: 
+    jpa.isolateInternalQueries: false
+    jpa.url: jdbc:postgresql://db:5432/template1
+    jpa.failFastTimeout: 1
+    jpa.dialect: org.hibernate.dialect.PostgreSQL94Dialect
+    jpa.leakThreshold: 10
+    jpa.batchSize: 1
+    jpa.user: postgres
+    jpa.ddlAuto: create-drop
+    jpa.password: example
+    jpa.autocommit: false
+    jpa.driverClass: org.postgresql.Driver
+    jpa.idleTimeout: 5000
+    jpa.dataSourceName: 
+    jpa.dataSourceProxy: false
+    # Hibernate-specific properties (i.e. `hibernate.globally_quoted_identifiers`)
+    jpa.properties.show_sql: true
+    jpa.properties.format_sql: true
+
+
+    jpa.pool.suspension: false
+    jpa.pool.minSize: 6
+    jpa.pool.maxSize: 18
+    jpa.pool.maxWait: 2000
+
+
+cas.authn.oidc.issuer: liferay
+cas.authn.oidc.claims: org,sub,name,preferred_username,family_name
+

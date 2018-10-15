@@ -1,12 +1,12 @@
 version: '3.4'
 services:
   cas1:
-    image: tomcat:8.0-jre8 
+    image: tomcat:8.0-jre8
     volumes:
       - ../../cas/build/libs/cas.war:/usr/local/tomcat/webapps/cas.war
-      - ../../config/cas1:/etc/cas/config 
-      - ./setenv.sh:/usr/local/tomcat/bin/setenv.sh   
-      - ./tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml 
+      - ../../config/cas1:/etc/cas/config
+      - ./setenv.sh:/usr/local/tomcat/bin/setenv.sh
+      - ./tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
     ports:
       - 8444:8080
       - 5005:8011
@@ -14,12 +14,12 @@ services:
       - "8009"
     command: catalina.sh jpda run
   cas2:
-    image: tomcat:8.0-jre8 
+    image: tomcat:8.0-jre8
     volumes:
       - ../../cas/build/libs/cas.war:/usr/local/tomcat/webapps/cas.war
-      - ../../config/cas2:/etc/cas/config 
-      - ./setenv.sh:/usr/local/tomcat/bin/setenv.sh   
-      - ./tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml 
+      - ../../config/cas2:/etc/cas/config
+      - ./setenv.sh:/usr/local/tomcat/bin/setenv.sh
+      - ./tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
     ports:
       - 8445:8080
       - 5006:8011
@@ -27,12 +27,12 @@ services:
       - "8009"
     command: catalina.sh jpda run
   casmg:
-    image: tomcat:8.0-jre8 
+    image: tomcat:8.0-jre8
     volumes:
       - ../../cas-management/build/libs/cas-management.war:/usr/local/tomcat/webapps/cas-management.war
       - ../../config/casmg:/etc/cas/config
-      - ./setenv.sh:/usr/local/tomcat/bin/setenv.sh  
-      - ./tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml     
+      - ./setenv.sh:/usr/local/tomcat/bin/setenv.sh
+      - ./tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
     ports:
       - 8446:8080
       - 5007:8011
@@ -44,4 +44,3 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: example
-

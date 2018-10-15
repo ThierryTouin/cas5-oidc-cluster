@@ -32,6 +32,21 @@ $ node index2.js
 $ cd cas5-oidc-cluster/client/openid-connect-tool/
 $ npm start
 ```
+
+```json
+  { "authority":"http://cas1:8080/cas",
+    "authority_proxy1":"http://localhost:9090/cas",
+    "authority_proxy2":"http://localhost:9191/cas",
+    "client_id":"test",
+    "client_secret":"test",
+    "response_type":"code",
+    "scope":"openid",
+    "redirect_uri":"http://dev1-virtualbox:8080",
+    "token":false
+  }
+```
+
+
 5. Terminal to update docker IP address
 In the **/etc/hosts** file, you must update (or add) the following three lines:
 ```bash
