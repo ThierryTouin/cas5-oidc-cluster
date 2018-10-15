@@ -70,6 +70,9 @@ Please check your settings and try again.`);
 }
 
 function buttonStates() {
+
+  console.log('execute buttonStates()');
+
   if (code) {
     disableToken(false);
   } else {
@@ -116,7 +119,13 @@ function getTokens() {
                 .done(function (data) {
                     settings.token = data;
                     $('#response').val(JSON.stringify(data, null, '    '));
-                    $('#decoded-token').val(JSON.stringify(jwt_decode(data.access_token), null, '    '));
+
+                    try {
+                      $('#decoded-token').val(JSON.stringify(jwt_decode(data.access_token), null, '    '));
+                    } catch (e) {
+                      console.log('error=' + e);
+                    }
+
                     saveSettingsInLocalStorage();
                 })
                 .fail(function (data, status, error) {
@@ -300,11 +309,12 @@ function disableLogout(disable) {
 }
 
 function disableProfile(disable) {
-  //$('#button-profile').prop('disabled', disable);
+  $('#button-profile1').prop('disabled', disable);
+  $('#button-profile2').prop('disabled', disable);
 }
 
 function disableAccount(disable) {
-  //$('#button-account').prop('disabled', disable);
+  $('#button-account').prop('disabled', disable);
 }
 
 function pullSettingsFromUI() {
@@ -325,7 +335,7 @@ function pullSettingsFromUI() {
   authUrl = protocolUrl + '/oidc/authorize';
   userInfoUrl1 = protocolUrl_proxy1 + '/oidc/profile';
   userInfoUrl2 = protocolUrl_proxy2 + '/oidc/profile';
-  logoutUrl = protocolUrl_proxy1 + '/oidc/logout';
+  logoutUrl = protocolUrl_proxy1 + '/logout';
 }
 
 function loadSettingsIntoUI() {

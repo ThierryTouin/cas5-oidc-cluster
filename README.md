@@ -33,6 +33,9 @@ $ cd cas5-oidc-cluster/client/openid-connect-tool/
 $ npm start
 ```
 
+Use http://dev1-virtualbox:8080/ for tool access.
+Domain name is inportant for cas/oidc serveur
+
 ```json
   { "authority":"http://cas1:8080/cas",
     "authority_proxy1":"http://localhost:9090/cas",
