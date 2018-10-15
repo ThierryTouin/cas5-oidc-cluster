@@ -20,7 +20,7 @@ cas.ticket:
     ignite.igniteAddress[0]: cas1:47500
     ignite.igniteAddress[1]: cas2:47500
     ignite.trustStoreFilePath:
-    #ignite.ackTimeout: 2000
+    ignite.ackTimeout: PT2S # 2000
     #ignite.joinTimeout: 1000
     ignite.localAddress:
     #ignite.localPort: -1

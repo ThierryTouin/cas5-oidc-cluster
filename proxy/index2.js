@@ -1,9 +1,10 @@
+var target = 'http://cas2:8080';
 var http = require('http'),
     httpProxy = require('http-proxy');
 var proxy = httpProxy.createProxyServer({});
 var server = http.createServer(function(req, res) {
     proxy.web(req, res, {
-        target: 'http://cas2:8080',
+        target: target,
 	//target: 'http://www.free.fr',
         secure: false,
         ws: false,
@@ -25,6 +26,7 @@ proxy.on('error', function (err, req, res) {
 });
 
 proxy.on('proxyRes', function(proxyRes, req, res) {
+  console.log('>>>>> ' + target);
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
 });
