@@ -20,37 +20,23 @@ $ docker-compose up --force-recreate
 2. Proxy terminal 1
 ```bash
 $ cd cas5-oidc-cluster/proxy/
+$ npm install
 $ node index.js
 ```
 3. Proxy terminal 2
 ```bash
 $ cd cas5-oidc-cluster/proxy/
+$ npm install
 $ node index2.js
 ```
 4. Terminal for the customer
 ```bash
 $ cd cas5-oidc-cluster/client/openid-connect-tool/
+$ npm install
 $ npm start
 ```
 
-Use http://dev1-virtualbox:8080/ for tool access.
-Domain name is inportant for cas/oidc serveur
-
-```json
-  { "authority":"http://cas1:8080/cas",
-    "authority_proxy1":"http://localhost:9090/cas",
-    "authority_proxy2":"http://localhost:9191/cas",
-    "client_id":"test",
-    "client_secret":"test",
-    "response_type":"code",
-    "scope":"openid",
-    "redirect_uri":"http://dev1-virtualbox:8080",
-    "token":false
-  }
-```
-
-
-5. Terminal to update docker IP address
+5. Terminal to update docker IP address (change after a container restart)
 In the **/etc/hosts** file, you must update (or add) the following three lines:
 ```bash
 172.18.0.3      cas1
@@ -72,3 +58,31 @@ $ cas5-oidc-cluster/server/docker/castom$ docker inspect castom_db_1 | grep IPAd
             "IPAddress": "",
                     "IPAddress": "172.18.0.6",
 ```
+
+
+6. Test a connexion
+
+Use `http://dev1-virtualbox:8080/` for tool access.
+Domain name is inportant for cas/oidc serveur. Only domain `dev1-virtualbox` is authorised by configuration.
+
+```json
+  { "authority":"http://cas1:8080/cas",
+    "authority_proxy1":"http://localhost:9090/cas",
+    "authority_proxy2":"http://localhost:9191/cas",
+    "client_id":"test",
+    "client_secret":"test",
+    "response_type":"code",
+    "scope":"openid",
+    "redirect_uri":"http://dev1-virtualbox:8080",
+    "token":false
+  }
+```
+
+Use login/password : superadmin/test in cas.
+
+
+7. Important URL
+
+http://cas1:8080/cas
+http://cas2:8080/cas
+http://cas1:8080/cas/logout

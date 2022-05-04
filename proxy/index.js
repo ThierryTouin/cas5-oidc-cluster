@@ -19,7 +19,6 @@ console.log(welcome.rainbow.bold);
 var server = http.createServer(function(req, res) {
     proxy.web(req, res, {
         target: target,
-	//target: 'http://www.free.fr',
         secure: false,
         ws: false,
         prependPath: false,
