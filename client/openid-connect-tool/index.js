@@ -331,7 +331,7 @@ function pullSettingsFromUI() {
   protocolUrl = settings.authority;
   protocolUrl_proxy1 = settings.authority_proxy1;
   protocolUrl_proxy2 = settings.authority_proxy2;
-  tokenUrl = protocolUrl_proxy1 + '/oidc/accessToken';
+  tokenUrl = protocolUrl_proxy2 + '/oidc/accessToken';
   authUrl = protocolUrl + '/oidc/authorize';
   userInfoUrl1 = protocolUrl_proxy1 + '/oidc/profile';
   userInfoUrl2 = protocolUrl_proxy2 + '/oidc/profile';
