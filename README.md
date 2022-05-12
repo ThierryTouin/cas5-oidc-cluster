@@ -36,6 +36,8 @@ $ npm install
 $ npm start
 ```
 
+(ps : you need http-server : `npm install http-server`)
+
 5. Terminal to update docker IP address (change after a container restart)
 In the **/etc/hosts** file, you must update (or add) the following three lines:
 ```bash
@@ -65,6 +67,10 @@ $ cas5-oidc-cluster/server/docker/castom$ docker inspect castom_db_1 | grep IPAd
 Use `http://dev1-virtualbox:8080/` for tool access.
 Domain name is inportant for cas/oidc serveur. Only domain `dev1-virtualbox` is authorised by configuration.
 
+![Tool](./resources/oidc-tool.png)
+
+
+Configuration is :
 ```json
   { "authority":"http://cas1:8080/cas",
     "authority_proxy1":"http://localhost:9090/cas",
