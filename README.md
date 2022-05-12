@@ -13,6 +13,9 @@ To summarize, to launch the project, you must open 4 terminals :
 (before you have to read the readme of the server and the client to install the applications, the commands below are only possible if the stack has already worked on the workstation)
 
 1. Terminal for Server
+
+Waring : Build your cas server before !!!
+
 ```bash
 $ cd cas5-oidc-cluster/server/docker/castom
 $ docker-compose up --force-recreate
